@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('pages.home', ['title' => 'Home | Beranda']);
@@ -10,9 +11,7 @@ Route::get('/about', function () {
     return view('pages.about', ['title' => 'About | Tentang Kami']);
 })->name('about');
 
-Route::get('/product', function () {
-    return view('pages.product', ['title' => 'Product | Produk Kami']);
-})->name('product');
+Route::get('/product', [ProductController::class, 'viewProduct'])->name('product');
 
 Route::get('/services', function () {
     return view('pages.services',  ['title' => 'Services | Layanan']);
