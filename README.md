@@ -71,7 +71,7 @@ php artisan key:generate
 #### 4. Migrate struktur table ke database
 
 ```bash
-php artisan migrate --seed
+php artisan migrate:fresh --seed
 ```
 
 #### 5. Konfigurasi .env File
